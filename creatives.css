@@ -84,6 +84,14 @@ html, body {
     animation-duration: 30s;  
 }
 
+#engine {
+    position: absolute;
+    height: 90%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
+}
+
 #circle4 {
     background-color: rgba(0, 170, 255, 0);
     height: 60%;

@@ -1,6 +1,8 @@
 var scrollvalue=0;
 var scrolldirection=1;
 var scrolltouch=0;
+//scrolltouch idea did not work
+
 //Functions
 function dig_rad(){
     return ((window.innerHeight)**2 + (window.innerWidth)**2)**(1/2);
@@ -44,12 +46,12 @@ function fixScrollBehavior(elem) {
         if (delta > 0) {
             if(scrolltouch==0){
                 scrolldown(16)
-                scrolltouch=1;
+                scrolltouch=0;
             }
         } else {
             if(scrolltouch==0){
                 scrollup(16)
-                scrolltouch=1;
+                scrolltouch=0;
             }
         }
     });
@@ -65,7 +67,7 @@ function scrolldefault(){
             scrolltouch=0;
         }
     
-    },4000);
+    },2000);
 }
 function scrolldown(speed){
     console.log("down"+scrollvalue);
