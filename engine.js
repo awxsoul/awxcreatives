@@ -18,83 +18,22 @@ function spin(){
     });   
 }
 
-function fixScrollBehavior(elem) {
-    elem.addEventListener('scroll', (e) => {
-        console.log('scrolling');
-    });
-
-    let MOUSE_OVER = false;
-    elem.addEventListener('wheel', (e) => {
-        if (MOUSE_OVER) {
-            if (e.preventDefault) {
-                e.preventDefault();
-            }
-            e.returnValue = false;
-            return false;
-        }
-    });
-
-    elem.addEventListener('mouseenter', () => {
-        MOUSE_OVER = true;
-    });
-    elem.addEventListener('mouseleave', () => {
-        MOUSE_OVER = false;
-    });
-
-    elem.addEventListener('wheel', (e) => {
-        let delta = e.wheelDelta;
-        if (delta > 0) {
-            if(scrolltouch==0){
-                scrolldown(16)
-                scrolltouch=0;
-            }
-        } else {
-            if(scrolltouch==0){
-                scrollup(16)
-                scrolltouch=0;
-            }
-        }
-    });
-}
-
-function scrolldefault(){
-    setInterval(function(){
-        if(scrolldirection==1){
-            scrolldown(22.5);
-            scrolltouch=0;
-        } else {
-            scrollup(22.5);
-            scrolltouch=0;
-        }
-    
-    },2000);
-}
-function scrolldown(speed){
-    console.log("down"+scrollvalue);
-    scrolldirection=1;
-            scrollvalue+=speed;
-            gsap.to(".projsec", {
-                rotation: scrollvalue,
-                duration: 1,
-                ease:"none"
-            });
-}
-function scrollup(speed){
-    console.log("up"+scrollvalue);
-    scrolldirection=0;
-            scrollvalue-=speed;
-            gsap.to(".projsec", {
-                rotation: scrollvalue,
-                duration: 1,
-                ease:"none"
-            });
+function tr(){
+    document.getElementById("circle4").style.backgroundColor="black";
 }
 
 //Event Listeners
 window.addEventListener("resize", display);
-
+document.getElementById("projects").addEventListener("onclick",tr);
 //Inital funations to run
 display();
-scrolldefault()
-fixScrollBehavior(window);
 
+console.log(window.scrollMaxY)
+window.addEventListener("scroll", ()=> {
+    console.log(window.scrollY)
+
+    if (window.scrollY>3000){
+        window.scrollTo(0,0)
+    }
+}
+)
