@@ -122,6 +122,7 @@ body {
     animation-name: example;
     animation-duration: 4s;
     animation-timeline: scroll();
+    animation-timing-function: linear;
 
 }
 
@@ -177,7 +178,8 @@ body {
     transform: translate(-50%,-50%);
     animation-name: rotateobj;
     animation-duration: 4s;
-    animation-timeline: scroll();
+    animation-timeline:scroll();
+    animation-timing-function: linear;
 }
 
 .projsec{
@@ -210,6 +212,7 @@ body {
 }
 
 @keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
+    0% {background-color: red;}
+    50% {background-color: yellow;}
+    100% {background-color: red;}
 }
