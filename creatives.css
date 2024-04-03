@@ -21,6 +21,7 @@ body {
     scrollbar-width: none;  
 } */
 
+
 #box {
     background-image: url(static/repeat_grid.png);
     background-size: contain;
@@ -29,8 +30,6 @@ body {
     width: 100vw;
     position: fixed;
 }
-
-
 
 
 .centre_circle{
@@ -50,6 +49,44 @@ body {
     top: 50vh;
     left: 50vw;    
 }
+
+#sections{
+    height: 28%;
+    aspect-ratio: 1;
+    background-color: rgba(0, 85, 255, 0.192);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+    animation-name: rotateobj;
+    animation-timing-function: linear;
+    animation-timeline: scroll();
+    
+}
+
+#secbox{
+    background-color: rgba(0, 0, 0, 0.12);
+    height: 40%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sec {
+    height: 100%;
+    aspect-ratio: 1;
+    list-style: none;
+    position: absolute;
+    background-color: rgba(255, 0, 170, 0.225); 
+    
+}
+
 
 #circle2 {
     background-color: rgba(255, 0, 81, 0);
@@ -212,7 +249,7 @@ body {
 }
 
 @keyframes example {
-    0% {background-color: red;}
-    50% {background-color: yellow;}
-    100% {background-color: red;}
+    0% {background-color: rgba(255, 0, 0, 0.339);}
+    50% {background-color: rgba(255, 255, 0, 0.265);}
+    100% {background-color: rgba(255, 0, 0, 0.339);}
 }

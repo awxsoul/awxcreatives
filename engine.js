@@ -1,51 +1,60 @@
-var scrollvalue=0;
-var scrolldirection=1;
-var scrolltouch=0;
-//scrolltouch idea did not work
 
-//Functions
-function dig_rad(){
-    return ((window.innerHeight)**2 + (window.innerWidth)**2)**(1/2);
-}
+//Functions ---------------X
 function display(){
-    document.getElementById("circle").style.height = dig_rad()+"px";
-    document.getElementById("circle").style.width = dig_rad()+"px";
+    var digagonal_radius=((window.innerHeight)**2 + (window.innerWidth)**2)**(1/2)
+    document.getElementById("circle").style.height = digagonal_radius+"px";
+    document.getElementById("circle").style.width = digagonal_radius+"px";
 }
-function spin(){
-    gsap.to(".projsec", {
-        rotation: 36,
-        duration: 1
-    });   
+
+function roatation_of_sections(){ //and arrrangement of sections
+    for (let i=1; i<17; i++){
+        var block = document.getElementById("section"+i)
+        angle=(360/16*i)
+        block.style.transform="rotate("+angle+"deg)"
+        var pi = Math.PI
+        var radvalue = angle*(pi/180); //convert deg to radian
+        block.style.left=(-Math.cos(radvalue))*330+"%" //cos(randians)
+        block.style.top=(-Math.sin(radvalue))*330+"%" //cos(randians)
+        console.log(angle)
+        console.log(Math.cos(radvalue))
+    }
+}
+function centrewheel(){
+    var secwheel=document.getElementById("sections")
+    console.log(secwheel.offsetHeight)
 }
 
 
-//Event Listeners
+//Event Listeners ---------------X
 window.addEventListener("resize", display);
 
-
-  
-//Circular scroll Function
+    //Circular Bi-directional Infinite Scroll Function
 window.addEventListener("scroll", ()=> {
     // to move to scroll top of the page(start of the disc) when it hits the bottom
-    var maxscroll = document.body.scrollHeight/1.334
-    console.log(document.body.scrollHeight/1.334)
-    console.log(window.scrollY)
+    this.maxScroll = document.body.scrollHeight/1.334
+    //maxScroll and oldScroll are variable for this function
+        //maxScroll hold the max near value to end
+        //oldScroll holds previous value
+    // console.log(document.body.scrollHeight/1.334)
+    // console.log(window.scrollY)
     if (this.oldScroll > this.scrollY){
         // print "false" if direction is down and "true" if up
         if (window.scrollY<1){
-            window.scrollTo(0,maxscroll)
+            window.scrollTo(0,this.maxScroll)
         }
-        console.log("True")
+        // console.log("True")
         this.oldScroll = this.scrollY;
     }
     else {
-        if (window.scrollY>maxscroll){
+        if (window.scrollY>this.maxScroll){
             window.scrollTo(0,0)
         }
-        console.log("False")
+        // console.log("False")
         this.oldScroll = this.scrollY;
     }  
 })
 
-//Inital functions to run
+//Inital functions to run 
 display();
+roatation_of_sections();
+centrewheel();
