@@ -94,8 +94,11 @@ body {
     border-right: 0.25rem solid rgba(128, 0, 0, 0); 
     clip-path: polygon(0% 5%, 0% 95%, 100% 76%, 98.9% 65.6%, 98.3% 55.2%, 98.2% 50% ,98.3% 44.8%, 98.9% 34.4%, 100% 24%); 
     /* topleft, bottomleft, bottomright, topright  */
-    /* Five points added inbetween bottomright and topright  */
-    
+    /* Five points added inbetween bottomright and topright  */   
+}
+
+.sec:hover {
+    background-color: rgb(0, 0, 0);
 }
 
 
@@ -221,6 +224,7 @@ body {
 
 #centre_logo{
     position: absolute;
+    background-color: rgba(0, 255, 255, 0);
     top: 50%;
     left: 50%;
     height: 41%;
@@ -231,17 +235,13 @@ body {
     animation-timing-function: linear; */
 }
 
-.projsec{
-    position: absolute;
-    height: 180%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: rgba(165, 42, 42, 0);
-    /* animation-name: rotateobj; */
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-}
+/* #centre_logo:hover{
+    height: 44%;
+    animation-name: rotateobj;
+    animation-duration: 3s;
+    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1)
+} */
+
 
 
 

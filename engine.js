@@ -1,4 +1,6 @@
 
+const centrelogo = document.getElementById("centre_logo")
+
 //Functions ---------------X
 function display(){
     var digagonal_radius=((window.innerHeight)**2 + (window.innerWidth)**2)**(1/2)
@@ -19,14 +21,21 @@ function roatation_of_sections(){ //and arrrangement of sections
         console.log(Math.cos(radvalue))
     }
 }
-function centrewheel(){
-    var secwheel=document.getElementById("sections")
-    console.log(secwheel.offsetHeight)
+
+function poprotate(){
+    centrelogo.style.height=44+"%"
 }
 
+function project_details(){
+    for (let i=1; i<17; i++){
+        
+    }
+    
+}
 
 //Event Listeners ---------------X
 window.addEventListener("resize", display);
+centrelogo.addEventListener("mouseenter", poprotate);
 
     //Circular Bi-directional Infinite Scroll Function
 window.addEventListener("scroll", ()=> {
