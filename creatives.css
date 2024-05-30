@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+/* The html body is given the height of 400vh 
+for the scroll functionality to work with the box div fixed 
+of 100vh of height, further the yscroll is disabled to complete 
+the circular roational scroll */
+
 html, body {
     height: 400vh;
     width: 100%;
@@ -21,7 +26,7 @@ body {
     scrollbar-width: none;  
 } */
 
-
+/* window of the the whole website  */
 #box {
     background-image: url(static/repeat_grid.png);
     background-size: contain;
@@ -31,7 +36,7 @@ body {
     position: fixed;
 }
 
-
+/* class for centring all div  */
 .centre_circle{
     margin: 0;
     padding: 0;
@@ -42,22 +47,17 @@ body {
     transform: translate(-50%,-50%);
 }
 
+/* div that contains all other div  */
 #circle {
     position: relative;
-    background-color: rgba(208, 222, 16, 0);
+    background-color: rgba(208, 222, 16, 0.504);
     border-radius: 50%;
     top: 50vh;
     left: 50vw;    
 }
 
-/* @media (max-aspect-ratio: 2/3){ 
-    #sections {
-        height: 40%;
-    } 
-}*/
-
 #sections{
-    height: 28%;
+    height: 26.2%;
     aspect-ratio: 1;
     background-color: rgba(126, 133, 148, 0);
     position: absolute;
@@ -66,14 +66,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     transform: translate(-50%,-50%);
+    /* rotation with sections div grouped orgin */
     animation-name: rotateobj;
     animation-timing-function: linear;
     animation-timeline: scroll();
     
 }
 
+/* project sections under circle div >> sections div, all 16 of them  */
 #secbox{
     background-color: rgba(0, 0, 0, 0);
     height: 80%;
@@ -84,7 +85,7 @@ body {
     position: relative;
     
 }
-
+/* class that collects all the project sections for configuration */
 .sec {
     height: 100%;
     aspect-ratio: 1; 
@@ -97,18 +98,15 @@ body {
     /* Five points added inbetween bottomright and topright  */   
 }
 
-.sec:hover {
-    background-color: rgb(0, 0, 0);
-}
-
-
+/* circle2 consists of project tag and animation card  */
 #circle2 {
-    background-color: rgba(255, 0, 81, 0);
-    height: 57%;
-    width: 57%;
-
+    background-color: rgba(255, 0, 81, 0.324);
+    height: 58%;
+    width: 58%;
+    
 }
 
+/* animation class attached for project and services wheel */
 .rotatation_animation{
     transform: translate(-50%,-50%);
     animation-name: rotateobj;
@@ -117,9 +115,10 @@ body {
 
 }
 
+/* project tag wheel circular animation in reverse  */
 #projects{
     position: absolute;
-    height: 57%;
+    height: 100%;
     aspect-ratio: 1;
     top:50%;
     left: 50%;
@@ -127,11 +126,11 @@ body {
     animation-direction: reverse;   
 }
 
+/* circle three consist of engine assets and services tag */
 #circle3 {
     background-color: rgba(217, 255, 0, 0);
     height: 49%;
     width: 49%;
-
 }
 
 #services{
@@ -143,6 +142,7 @@ body {
     animation-duration: 30s;  
 }
 
+/* engine is the illustration of inner engine for the wheel roatation  */
 #engine {
     position: absolute;
     height: 90%;
@@ -151,6 +151,7 @@ body {
     transform: translate(-50%,-50%);  
 }
 
+/* circle 4 consists of services tag  */
 #circle4 {
     background-color: rgba(20, 64, 86, 0);
     height: 60%;
@@ -165,7 +166,7 @@ body {
     animation-duration: 30s;
     animation-direction: reverse;
 }
-
+ /* consists of all links and logo */
 #circle5 {
     z-index: 10;
     background-color: rgba(255, 0, 81, 0);
@@ -177,19 +178,16 @@ body {
     animation-timing-function: linear; */
 
 }
-
+.social_icons{
+    height: 8%;
+    position: absolute;
+}
 #email{
     position: absolute;
     bottom: 0%;
     left:50%;
     height: 25%;
     transform: translate(-50%,0%);
-
-}
-
-.social_icons{
-    height: 8%;
-    position: absolute;
 }
 #instagram{
     top: 60%;
@@ -215,13 +213,12 @@ body {
     transform: translate(-50%,0);
 }
 
+/* editing logo placement  */
 #logo_holder {
     background-color: rgba(0, 255, 102, 0);
     height: 70%;
     width: 70%;
-
 }
-
 #centre_logo{
     position: absolute;
     background-color: rgba(0, 255, 255, 0);
@@ -235,33 +232,10 @@ body {
     animation-timing-function: linear; */
 }
 
-/* #centre_logo:hover{
-    height: 44%;
-    animation-name: rotateobj;
-    animation-duration: 3s;
-    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1)
-} */
 
-
-
-
+/* animations */
 @keyframes rotateobj {
     0% {transform: translate(-50%,-50%) rotate(0deg);}
     100% {transform: translate(-50%,-50%) rotate(360deg);}
 }
 
-@keyframes fade_out {
-    0% {opacity: 100;}
-    100% {opacity: 0;}
-}
-
-@keyframes fade_in {
-    0% {opacity: 100;}
-    100% {opacity: 0;}
-}
-
-@keyframes example {
-    0% {background-color: rgba(255, 0, 0, 0.339);}
-    50% {background-color: rgba(255, 255, 0, 0.265);}
-    100% {background-color: rgba(255, 0, 0, 0.339);}
-}
