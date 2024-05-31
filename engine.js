@@ -18,8 +18,8 @@ function roatation_of_sections(){ //rotation and arrrangement of sections
         var radvalue = angle*(pi/180); //convert deg to radian
         block.style.left=(-Math.cos(radvalue))*190+"%" //cos(randians)
         block.style.top=(-Math.sin(radvalue))*190+"%" //cos(randians)
-        console.log(angle)
-        console.log(Math.cos(radvalue))
+        // console.log(angle)
+        // console.log(Math.cos(radvalue))
     }
 }
 
