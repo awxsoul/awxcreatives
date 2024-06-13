@@ -1,5 +1,21 @@
 
 //Variables ---------------X
+const projects= [["Logo Design","RAINBOW"],
+["Illustrations","TABEAZY"],
+["Motion Graphics","WATERLABS"],
+["Calender Print","NORSKLING"],
+["Logo Desgin","BRAND HYPOTHESIS"],
+["Motion Graphics","TABEAZY"],
+["Illustrations","HOMEMADE"],
+["Branding","MOOG STUDIOS"],
+["Motion Graphics","MASCHMEIJER"],
+["Illustrations","MR.DEEP DEMOCRACY"],
+["Branding","TURPLE"],
+["Illustrations","GUITAR"],
+["Line Art","WATCHES DUBAI"],
+["Logo Desgin","VULTURE CULTURE"],
+["Illustrations","BLUE&RED"],
+["Logo Desgin","FLYING FINS"]]
 
 //Functions ---------------X
 
@@ -20,6 +36,17 @@ function roatation_of_sections(){ //rotation and arrrangement of sections
         block.style.top=(-Math.sin(radvalue))*190+"%" //cos(randians)
         // console.log(angle)
         // console.log(Math.cos(radvalue))
+    }
+}
+
+function fetch_project_details(){
+    console.log("function works")
+    var project_tittle=document.getElementsByClassName("proj_tittle")
+    var project_client=document.getElementsByClassName("client")
+    for(let i=0;i<projects.length;i++){
+        project_tittle[i].innerHTML=projects[i][0];
+        project_client[i].innerHTML=projects[i][1];
+        console.log("loop works") 
     }
 }
 
@@ -51,3 +78,4 @@ window.addEventListener("scroll", ()=> {
 //Inital functions to run ---------------X
 display();
 roatation_of_sections();
+fetch_project_details();
