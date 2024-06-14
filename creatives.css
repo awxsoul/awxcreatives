@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 /* The html body is given the height of 400vh 
 for the scroll functionality to work with the box div fixed 
 of 100vh of height, further the yscroll is disabled to complete 
@@ -108,14 +109,14 @@ body {
     top: 45%;
     transform: translate(0%,-50%);
     text-align: right;
-    font-family: 'spin';  
+    font-family: 'spinwerad';  
 }
 
 .client{
     background-color: rgba(246, 255, 127, 0);
     position: absolute;
     text-align: right;
-    font-family: 'spin';
+    font-family: 'spinwerad';
     color:  rgb(240, 236, 229);
     font-size: 1.5vw;
     height: 10%;
@@ -266,8 +267,5 @@ body {
 }
 
 /* fonts */
-@font-face {
-    font-family: 'spin'; /*a name to be used later*/
-    src: url('/static/fonts/spinwerad.ttf'); /*URL to font*/
-}
+@import url('https://fonts.cdnfonts.com/css/spinwerad');
 
