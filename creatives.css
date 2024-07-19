@@ -123,6 +123,7 @@ body {
     width: 70%;
     right: 5%;
     top: 50%;
+    transform: translate(0%,0%);
 }
 
 /* circle2 consists of project tag and animation card  */

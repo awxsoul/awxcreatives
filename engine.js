@@ -40,18 +40,53 @@ function roatation_of_sections(){ //rotation and arrrangement of sections
 }
 
 function fetch_project_details(){
-    console.log("function works")
     var project_tittle=document.getElementsByClassName("proj_tittle")
     var project_client=document.getElementsByClassName("client")
     for(let i=0;i<projects.length;i++){
         project_tittle[i].innerHTML=projects[i][0];
         project_client[i].innerHTML=projects[i][1];
-        console.log("loop works") 
+        console.log("fetched project details") 
+    }
+}
+
+function mirror_project_deatil_alignment(){
+    // the project sections are outside circle2
+    // get cirlce2 to loacte vertical split
+    var check = document.getElementById("circle2")
+    var rect = check.getBoundingClientRect(); // gets DOMrect values  
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
+    for(let i=1;i<=16;i++){ // loop to get all sections checked
+        var proj_sec = document.getElementById("section"+i.toString())
+        var box = proj_sec.getBoundingClientRect();
+        // selected div and fetched its DOMrect values 
+        centre_half=(rect.left+(rect.right-rect.left))/2
+        // centre half is the y coordinate to split the viewport into two parts
+        // checking sections location below
+        var title = proj_sec.children[0] //title
+        var client = proj_sec.children[1] //client
+        if (box.left>centre_half && box.left>centre_half){
+            title.style.transform="rotate(180deg)"
+            title.style.transform+="translate(0%,-50%)"
+            title.style.textAlign="left"
+            client.style.textAlign="left" //remove hypen in attribute name, capitalize next letter
+            client.style.transform="rotate(180deg)"
+            client.style.transform+="translate(0%,100%)"
+        }
+        else {
+            title.style.transform="rotate(0deg)"
+            title.style.transform+="translate(0%,-50%)"
+            title.style.textAlign="right"
+            client.style.textAlign="right" //remove hypen in attribute name, capitalize next letter
+            client.style.transform="rotate(0deg)" //use += for adding attributes to the transform
+            client.style.transform+="translate(0%,0%)"
+        }
     }
 }
 
 //Event Listeners ---------------X
 window.addEventListener("resize", display);
+
+window.addEventListener("scroll", mirror_project_deatil_alignment);
 
 //Circular Bi-directional Infinite Scroll Function
 window.addEventListener("scroll", ()=> {
@@ -79,3 +114,4 @@ window.addEventListener("scroll", ()=> {
 display();
 roatation_of_sections();
 fetch_project_details();
+mirror_project_deatil_alignment();
